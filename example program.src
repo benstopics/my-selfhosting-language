@@ -1,0 +1,25 @@
+; static/global variables
+i intvar 5
+f fltvar 0.6
+s strvar 'Hello World!'
+l varlist [intvar,fltvar,strvar]
+
+[ i returnInt[i first, i second] ; static function
+	i result first*second
+	= result ; return value syntax
+]
+
+[ dog ; class
+	s name 'Daisy'
+	
+	; Walks the dog and returns how long it took in milliseconds.
+	; Assumes static function time_millis[] returns current time in milliseconds.
+	[ i walk[]
+		i starttime time_millis[]
+		i energy 100
+		8[energy > 0]
+			energy -= 1
+		]
+		= time_millis[] - starttime
+	]
+]
