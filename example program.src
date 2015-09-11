@@ -1,36 +1,36 @@
-/- Global variables -/
-intvar 5 // Integer value
+\ Global variables \
+intvar 5 // Integer value 
 fltvar 0.6 // Decimal value
 strvar 'Hello World!' // String
 deflistlength [10 // Definition of list with 10 elements
 intlist 5, 6, 7, 8, 9 // Definition of list with 5 elements
 
-] intreturn[first 0, second 0] /- Global static function. Variable types determined by unused value.
-									C signature would be "int globl_intreturn(int first, int second)"
+] intreturn[first 0, second 0] \ Global static function. Variable types determined by unused value.
+									C signature would be "int globl_intreturn(int first, int second)" \
 	result first*second
 	= result // return value syntax
-	/- Note: return type, either primitive datatype, class, or void is determined
+	\ Note: return type, either primitive datatype, class, or void is determined
 		by a unanimous agreement amongst all the return statements in a function.
-		All return statements must return the same type of value. -/
+		All return statements must return the same type of value. \
 
 [ dog // Class
 	name 'Daisy' // Non-static string attribute that will go into struct
 	
 	// Walks the dog and returns how long it took in milliseconds.
 	// Assumes static function time_millis[] returns current time in milliseconds.
-	[ walk[] // Non-static function. C signature would be "int class_dog_walk(struct dog this)"
+	] walk[] // Non-static function. C signature would be "int class_dog_walk(struct dog this)"
 		starttime time_millis[]
 		energy 100
 		8[energy > 0]
-			energy - 1 /- This is the syntax for subtraction assignment,
-							imaginary equal sign inbetween symbol and operator. -/
+			energy - 1 \ This is the syntax for subtraction assignment,
+							imaginary equal sign inbetween symbol and operator. \
 			negnum [- 1] // Assign negnum to integer value -1
-			energy- intlist[0 /- Loads first element in global list intlist and
-									subtracts it from energy. -/
+			energy- intlist[0 \ Loads first element in global list intlist and
+									subtracts it from energy. \
 		]
 		= time_millis[] - starttime
 		
-	] getWhatDogsSay[] /- Static function defined by class "dog".
-							C signature would be "char* globl_dog_getWhatDogsSay()"
+	] getWhatDogsSay[] \ Static function defined by class "dog".
+							C signature would be "char* globl_dog_getWhatDogsSay()" \
 		= "Woof!"
 ]
