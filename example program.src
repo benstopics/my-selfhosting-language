@@ -5,6 +5,9 @@ strvar 'Hello World!' // String
 deflistlength [10 // Definition of list with 10 elements
 intlist 5, 6, 7, 8, 9 // Definition of list with 5 elements
 
+\	By default, functions in outer group are considered in the "main" group.
+	However, groups don't necessarily matter. They are simply for aesthetics.
+	They simply alter the name of the functions and variables.
 ] intreturn[first 0, second 0] \ Global static function. Variable types determined by unused value.
 									C signature would be "int globl_intreturn(int first, int second)" \
 	result first*second
@@ -15,6 +18,7 @@ intlist 5, 6, 7, 8, 9 // Definition of list with 5 elements
 
 [ dog // Class
 	name 'Daisy' // Non-static string attribute that will go into struct
+	. 
 	
 	// Walks the dog and returns how long it took in milliseconds.
 	// Assumes static function time_millis[] returns current time in milliseconds.
