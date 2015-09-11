@@ -1,0 +1,16 @@
+symbol table methods:
+
+enter_scope()
+find_symbol(x) if in any scope
+add_symbol(x)
+check_scope(x) if in current scope
+exit_scope()
+
+
+Class names can be declared before they are defined, requiring multiple passes.
+C++ has no classes because it is single pass.
+
+lesson from lecture, "It is much better if it makes your life easier to have
+multiple simple passes rather than have one big complicated pass where all
+the code is entangled. It is much easier to debug your compiler if you are
+willing to make multiple passes over the language.
